@@ -1,0 +1,4 @@
+pyspellchecker==0.5.5
+wordninja==2.0.0
+nltk==3.4.5
+
