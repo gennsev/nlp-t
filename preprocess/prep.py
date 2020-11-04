@@ -103,6 +103,17 @@ def split_attached_words(text):
     return " ".join(words)
 
 
+def remove_hashtag_split(text):
+    """
+    Removes hashtags and splits the tags into separeted words.
+    E.g.: #famousactor -> famous actor
+    """
+    hashtag_list = re.findall("#(\w+)", text) 
+    for hashtag in hashtag_list: 
+        text = text.replace(f'#{hashtag}', split_attached_words(hashtag))
+    return text
+
+
 def remove_stopwords(text):
     """
     Removes stop words from text.
